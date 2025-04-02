@@ -1,0 +1,15 @@
+h1 {
+  background-color: aqua !important;
+}
+
+.title {
+  background-color: green;
+}
+
+#main-title {
+  background-color: pink;
+}
+
+#mainTitle {
+  background-color: orange;
+}
