@@ -1,15 +1,271 @@
-h1 {
-  background-color: aqua !important;
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+* :hover {
+  text-decoration: none;
+}
+
+/* * :visited {
+  color: initial;
+} */
+
+/* CSS Importing Fonts */
+@font-face {
+  font-family: "BigShoulders";
+  src: url('fonts/BigShoulders-Regular.woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "BigShoulders";
+  src: url('fonts/BigShoulders-ExtraBold.woff2');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url('fonts/Montserrat-Regular.woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url('fonts/Montserrat-Medium.woff2');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url('fonts/Montserrat-Bold.woff2');
+  font-weight: 700;
+}
+
+/* CSS Default Setup Our Way */
+body * {
+  font-family: "Montserrat";
+  font-weight: 400;
+  color: #08263C;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header a {
+  color: #BC5A1B;
+}
+
+.header {
+  position: fixed;
+  width: calc(100% - 120px);
+  background-color: #08263c45;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  padding: 10px 60px;
+}
+
+/* Burger Menu */
+.burger-menu {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.burger-s,
+.burger-s::before,
+.burger-s::after {
+  height: 3px;
+  width: 100%;
+  border-radius: 50px;
+  background-color: #08263C;
+}
+
+.burger-s::after,
+.burger-s::before {
+  content: "";
+  position: absolute;
+  right: 0;
+}
+
+.burger-s::before {
+  top: 5px;
+  width: 70%;
+}
+
+.burger-s::after {
+  bottom: 5px;
+  width: 40%;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: flex-end;
+  height: 50px;
+}
+
+nav a {
+  position: relative;
+  line-height: 20px;
+}
+
+.nav-item::after {
+  content: "";
+  display: block;
+  border-bottom: 2px solid #08263C;
+  position: absolute;
+  width: 100%;
+  bottom: -12px;
+  padding-top: 5px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .5s cubic-bezier(.19, .43, .37, 1);
+}
+
+.nav-item:hover::after {
+  transform: scaleX(1);
+  transition: transform .5s cubic-bezier(.19, .43, .37, 1);
+}
+
+main {
+  padding-top: 85px;
+  background-color: #FAF5E2;
+}
+
+.hero-shot {
+  height: calc(100vh - 73px);
+  background-image: url(images/hero-shot-1-removebg.png), url(images/hero-shot-1-removebg.png);
+  background-repeat: no-repeat,
+    no-repeat;
+  background-position: 50% 50%;
+  background-position-x: 110%, 100%;
+  background-position-y: 90%, 60%;
+  /* background-position: 20% 80%, 20% 30%; */
+  /* background-size: cover; */
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .title {
-  background-color: green;
+  font-weight: 700;
+  max-width: 60%;
+  font-size: 90px;
+  margin-left: 30px;
+  letter-spacing: 1px;
 }
 
-#main-title {
-  background-color: pink;
+.hero-shot p {
+  font-size: 20px;
+  max-width: 70%;
+  margin-left: 30px;
 }
 
-#mainTitle {
-  background-color: orange;
+.max-width {
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  column-gap: 1%;
+  row-gap: 20px;
+  justify-content: center;
+}
+
+.student-post {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  position: relative;
+  align-items: center;
+}
+
+.post-info {
+  width: 45%;
+}
+
+.fave,
+.share {
+  position: absolute;
+  margin: 10px;
+  bottom: 0;
+}
+
+.fave {
+  right: 0;
+}
+
+.share {
+  right: 50px;
+}
+
+.posts-container h2 {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 50px;
+  color: #08263C;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.posts-container h3 {
+  margin: 5px 0;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.posts-container p {
+  padding-bottom: 15px;
+  font-size: 14px;
+}
+
+/* header::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  opacity: .45;
+  position: absolute;
+  z-index: 0;
+} */
+
+/* .header-bg {
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  opacity: .45;
+  position: absolute;
+  z-index: 0;
+} */
+
+/* .mihaela-post {
+  position: sticky;
+  background-color: blue;
+  top: 73px;
+} */
+
+.emil-post {
+  position: relative;
+}
+
+.emil-post h1 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
