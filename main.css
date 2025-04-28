@@ -149,18 +149,24 @@ main {
 
 .hero-shot {
   height: calc(100vh - 73px);
-  background-image: url(images/hero-shot-1-removebg.png), url(images/hero-shot-1-removebg.png);
-  background-repeat: no-repeat,
+  /* background-image: url(images/hero-shot-1-removebg.png), url(images/hero-shot-1-removebg.png); */
+  /* background-repeat: no-repeat,
     no-repeat;
   background-position: 50% 50%;
   background-position-x: 110%, 100%;
-  background-position-y: 90%, 60%;
+  background-position-y: 90%, 60%; */
   /* background-position: 20% 80%, 20% 30%; */
   /* background-size: cover; */
   display: flex;
   align-items: left;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+}
+
+.hero-bg {
+  position: absolute;
+  right: 0;
 }
 
 .title {
@@ -238,6 +244,36 @@ main {
   font-size: 14px;
 }
 
+.helper {
+  display: none;
+}
+
+footer {
+  background-color: #08263C;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.footer-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-row a,
+.copyright {
+  color: #FAF5E2;
+  padding-bottom: 10px;
+}
+
+.copyright {
+  font-size: 12px;
+  text-align: center;
+}
+
 /* header::before {
   content: "";
   width: 100%;
@@ -263,7 +299,7 @@ main {
   top: 73px;
 } */
 
-.emil-post {
+/* .emil-post {
   position: relative;
 }
 
@@ -271,7 +307,7 @@ main {
   position: absolute;
   bottom: 0;
   right: 0;
-}
+} */
 
 /* Media queries for responsive design */
 @media (min-width: 1024px) {
@@ -293,6 +329,16 @@ main {
 }
 
 @media (max-width: 1024px) {
+  .max-width {
+    max-width: 95vw;
+    height: auto;
+  }
+
+  .hero-bg img {
+    width: 70%;
+    height: auto;
+  }
+
   .header-inner {
     align-items: flex-end;
   }
@@ -332,7 +378,21 @@ main {
     transition: transform .5s cubic-bezier(0.19, 0.43, 0.37, 1);
   }
 
+  .post-info {
+    width: 100%;
+  }
 
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-row {
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (max-width: 768px) {
